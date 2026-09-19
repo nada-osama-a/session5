@@ -20,7 +20,7 @@ class SimpleWindow(QMainWindow):
         self.timer.start(30)
 
     def update_frame(self):
-        frame = self.camera.get_frame()
+        frame = self.camera.frame
         if frame is not None:
             h, w, c = frame.shape
             img = QImage(frame.data, w, h, c * w, QImage.Format_BGR888)
